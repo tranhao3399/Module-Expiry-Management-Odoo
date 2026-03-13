@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <record id="action_expiring_reporting" model="ir.actions.act_window">
+            <field name="name">Reporting</field>
+            <field name="res_model">stock.lot</field>
+
+            <field name="view_mode">pivot,graph,tree,form</field>
+
+            <field name="domain">[('is_expired_unsold', '=', True)]</field>
+
+            <field name="context">{
+                'group_by': ['expiration_date:month'],
+                'pivot_measures': ['total_loss_value', 'stored_product_qty'],
+                'pivot_orderby': 'total_loss_value desc',
+
+                'graph_mode': 'bar',
+                'graph_measures': ['total_loss_value'],
+                'graph_group_by': ['expiration_date:month'],
+            }</field>
+
+        </record>
+
+        <record id="view_expiring_reporting_search" model="ir.ui.view">
+            <field name="name">stock.lot.expiring.reporting.search</field>
+            <field name="model">stock.lot</field>
+            <field name="arch" type="xml">
+                <search string="Reporting">
+
+                    <field name="total_loss_value"/>
+                    <field name="stored_product_qty"/>
+
+                    <filter name="Expired_Unsold" string="Đã hết hạn chưa xử lý" domain="[('is_expired_unsold', '=', True)]"/>
+
+                    <group expand="0" string="Group By">
+                        <filter string="Sản phẩm" name="group_product" context="{'group_by':'product_id'}"/>
+                        <filter string="Tháng Hết hạn" name="group_month" context="{'group_by':'expiration_date:month'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+
+        <menuitem
+            id="menu_expiring_reporting_action"
+            name="Reporting"
+            parent="menu_expiring_lots_parent"
+            action="action_expiring_reporting"
+            sequence="10"
+        />
+
+    </data>
+</odoo>
