@@ -1,5 +1,5 @@
-Expiry Management Module (Odoo)
-Tổng quan
+## Expiry Management Module (Odoo)
+## Tổng quan
 Expiry Management là module hỗ trợ quản lý các sản phẩm sắp hết hạn trong hệ thống Odoo.
 Module giúp doanh nghiệp theo dõi hạn sử dụng sản phẩm, cảnh báo các sản phẩm gần hết hạn và tự động gửi email thông báo để tránh thất thoát hàng hóa.
 ## Chức năng chính
