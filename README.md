@@ -9,12 +9,12 @@ Module giúp doanh nghiệp theo dõi hạn sử dụng sản phẩm, cảnh bá
 * Hỗ trợ theo dõi các lô sản phẩm (lot/serial) và ngày hết hạn.
 * Các sản phẩm còn **dưới 7 ngày** trước khi hết hạn sẽ được **tô màu đỏ** để cảnh báo trực quan cho người quản lý.
 
-### 3. Tự động gửi mail thông báo
+### 2. Tự động gửi mail thông báo
 
 * Hệ thống sử dụng **Cron Job của Odoo** để tự động chạy mỗi ngày.
 * Tự động gửi email thông báo các sản phẩm sắp hết hạn cho bộ phận sales.
 
-### 4. Dashboard quản trị
+### 3. Dashboard quản trị
 
 * Dashboard tổng quan hiển thị  Pivot và Graph:
   
